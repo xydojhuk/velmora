@@ -18,12 +18,12 @@ Run and customize an online store on infrastructure you control.
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/home-page.webp" alt="KoZove homepage" width="850">
+  <img src="docs/screenshots/home-page.webp" alt="Velmora storefront homepage" width="850">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/detail-card.webp" alt="Phone number details" width="49%">
-  <img src="docs/screenshots/admin-panel.webp" alt="Admin dashboard" width="49%">
+  <img src="docs/screenshots/detail-card.webp" alt="Velmora product details" width="49%">
+  <img src="docs/screenshots/admin-panel.webp" alt="Velmora admin dashboard" width="49%">
 </p>
 
 ## Features
