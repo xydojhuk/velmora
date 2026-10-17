@@ -1,0 +1,112 @@
+{
+  "modals": {
+    "about": {
+      "enabled": true,
+      "eyebrow": "ABOUT {store}",
+      "title": "About our products",
+      "lead": "Use this dialog to explain your brand, product line, workshop, cafe, studio, or any other business.",
+      "stats": [
+        {
+          "value": "Custom",
+          "label": "your products"
+        },
+        {
+          "value": "24/7",
+          "label": "online catalog"
+        }
+      ],
+      "cards": [
+        {
+          "title": "Configurable storefront",
+          "text": "Content can be managed from the administration panel without editing Vue components."
+        },
+        {
+          "title": "Self-hosted",
+          "text": "The application, database and media remain under your control."
+        }
+      ],
+      "callout_title": "Make it your own",
+      "callout_text": "Replace the bundled demo content with your own products, images and copy before going live."
+    },
+    "shipping": {
+      "enabled": true,
+      "eyebrow": "ORDER / SHIPPING / PAYMENT",
+      "title": "Ordering and delivery",
+      "lead": "Available shipping and payment methods are configured from Store Settings and shown during checkout.",
+      "steps": [
+        {
+          "title": "Checkout",
+          "text": "The customer selects products and enters contact details."
+        },
+        {
+          "title": "Confirmation",
+          "text": "Store staff review the order and contact the customer when necessary."
+        },
+        {
+          "title": "Payment",
+          "text": "The configured payment method is used for the order."
+        },
+        {
+          "title": "Dispatch",
+          "text": "Shipping and tracking details can be saved from the administration panel."
+        }
+      ],
+      "sections": [
+        {
+          "title": "Before dispatch",
+          "items": [
+            "Confirm the selected product and quantity",
+            "Verify customer contact details",
+            "Check the selected shipping method"
+          ]
+        },
+        {
+          "title": "Support",
+          "items": [
+            "Keep the order number for support requests",
+            "Add store-specific warranty and return rules here"
+          ]
+        }
+      ],
+      "note": "Replace this text with your actual shipping, payment, return and warranty policy before publishing the store."
+    },
+    "contacts": {
+      "title": "Order and product support",
+      "lead": "Contact the store for product, order, setup, and warranty questions.",
+      "email_note": "Orders and support",
+      "region_note": "Shipping and support coverage",
+      "cards": [
+        {
+          "eyebrow": "BEFORE PURCHASE",
+          "title": "Choose the right product",
+          "text": "Ask questions before ordering if you are unsure which product fits your needs."
+        },
+        {
+          "eyebrow": "AFTER PURCHASE",
+          "title": "Order support",
+          "text": "Use your order number when contacting the store about an existing purchase."
+        },
+        {
+          "eyebrow": "WARRANTY",
+          "title": "Warranty questions",
+          "text": "Describe the issue and attach photos or video when useful."
+        }
+      ],
+      "callout_title": "What to include in your message",
+      "callout_text": "Include the product name, order number if available, and a short description of your question."
+    }
+  },
+  "platform": {
+    "enabled": true,
+    "eyebrow": "INDEPENDENT OPEN-SOURCE SOFTWARE",
+    "title": "Velmora — your store, your server.",
+    "description": "Velmora is a self-hosted e-commerce platform. This shop runs on an independent installation controlled by its owner.",
+    "support_title": "Support open-source development",
+    "support_text": "The code and documentation will be available when Velmora is publicly released. Supporting the project is always optional.",
+    "footer_label": "Powered by Velmora",
+    "repository_label": "Project on GitHub",
+    "repository_url": "",
+    "support_label": "Support the project",
+    "support_url": ""
+  }
+}

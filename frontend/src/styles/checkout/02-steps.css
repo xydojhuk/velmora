@@ -1,0 +1,182 @@
+.checkout-option.active{
+    border-color: var(--border-accent);
+    background: linear-gradient(145deg, rgba(127, 134, 71, .14), rgba(127, 134, 71, .06));
+    box-shadow: inset 0 0 0 1px rgba(127, 134, 71, .08), 0 12px 24px rgba(0, 0, 0, .12);
+}
+
+.checkout-option__marker{
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    border: 1px solid var(--border-light);
+    border-radius: 50%;
+    background: var(--bg-soft);
+    transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.checkout-option.active .checkout-option__marker{
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: inset 0 0 0 4px var(--bg-soft);
+}
+
+.checkout-option__content{
+    min-width: 0;
+    display: block;
+}
+
+.checkout-option__content strong,
+.checkout-option__content span,
+.checkout-option__content small{
+    display: block;
+}
+
+.checkout-option__content strong{
+    margin-bottom: 5px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.checkout-option.active .checkout-option__content strong{
+    color: var(--text);
+}
+
+.checkout-option__content span{
+    overflow-wrap: anywhere;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.checkout-option__content small{
+    margin-top: 8px;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.checkout-method-note{
+    margin: 12px 0 0;
+    padding: 11px 13px;
+    border-left: 2px solid var(--accent);
+    background: rgba(127, 134, 71, .05);
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.checkout-method-fields{
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.checkout-method-fields--single,
+.checkout-method-fields--stacked{
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.checkout-method-fields > .checkout-field--wide{
+    grid-column: 1 / -1;
+}
+
+.checkout-comment-field{
+    margin-top: 16px;
+}
+
+.checkout-submit{
+    width: 100%;
+    min-height: 58px;
+    font-size: 14px;
+}
+
+.checkout-legal{
+    max-width: 680px;
+    margin: -2px auto 0;
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.checkout-honeypot{
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.checkout-summary{
+    position: sticky;
+    top: 104px;
+    --ui-card-bg: linear-gradient(160deg, rgba(24, 29, 23, .96), rgba(13, 16, 13, .94));
+    --ui-card-border: var(--border-light);
+    padding: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.checkout-summary__image{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.45;
+    margin-top: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-soft);
+}
+
+.checkout-summary__image::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(8, 10, 8, .24), transparent 42%);
+}
+
+.checkout-summary__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.checkout-summary h2{
+    margin-top: 16px;
+    overflow-wrap: anywhere;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.checkout-summary > p:not(.checkout-kicker){
+    margin-top: 7px;
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.checkout-summary__quantity{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 18px;
+    padding: 13px 0;
+    border-block: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.checkout-summary__quantity > div{
+    display: grid;
+    grid-template-columns: 34px 38px 34px;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+

@@ -1,0 +1,235 @@
+.admin-field input:focus,
+.admin-field select:focus,
+.admin-field textarea:focus{
+    border-color: var(--border-accent);
+    background: rgba(10, 13, 10, .9);
+}
+
+.admin-field input:disabled,
+.admin-field select:disabled,
+.admin-field textarea:disabled{
+    opacity: .55;
+}
+
+.admin-field small{
+    color: var(--text-muted);
+    font-size: 8px;
+    line-height: 1.4;
+}
+
+.admin-form-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-form-grid--3{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-form-grid--4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.admin-save{
+    width: calc(100% - 32px);
+    margin: 16px 16px 0;
+}
+
+.admin-products-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.admin-product-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-product-card__image{
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-soft);
+}
+
+.admin-product-card__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-product-card__image > span{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 7px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    background: rgba(8, 10, 8, .82);
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.admin-product-card__image > span.is-live{
+    border-color: rgba(127, 163, 75, .55);
+    color: #9fc172;
+}
+
+.admin-product-card__image > span.is-draft{
+    color: var(--text-muted);
+}
+
+.admin-product-card__body{
+    flex: 1;
+    padding: 15px;
+}
+
+.admin-product-card__body > small{
+    color: var(--accent-soft);
+    font-size: 7px;
+    letter-spacing: .09em;
+}
+
+.admin-product-card__body h2{
+    margin: 7px 0 0;
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.admin-product-card__body p{
+    min-height: 31px;
+    margin: 6px 0 0;
+    color: var(--text-muted);
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.admin-product-card__meta{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 13px;
+    padding-top: 11px;
+    border-top: 1px solid var(--border);
+}
+
+.admin-product-card__meta strong{
+    color: var(--accent);
+    font-family: "Tektur", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.admin-product-card__meta span{
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+.admin-product-card__actions{
+    min-height: 49px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    padding: 9px;
+    border-top: 1px solid var(--border);
+}
+
+.admin-product-card__actions a,
+.admin-product-card__actions button,
+.admin-product-card__inactive{
+    min-height: 30px;
+    display: grid;
+    place-items: center;
+    padding: 7px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--text-muted);
+    font: inherit;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    text-align: center;
+}
+
+.admin-product-card__actions a:hover,
+.admin-product-card__actions button:hover{
+    border-color: var(--border-accent);
+    color: var(--text-secondary);
+}
+
+.admin-product-card__inactive{
+    opacity: .6;
+}
+
+.admin-empty-card{
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.admin-editor{
+    display: grid;
+    gap: 14px;
+}
+
+.admin-editor-section{
+    padding-bottom: 16px;
+}
+
+.admin-editor-section > .admin-field{
+    margin-top: 12px;
+}
+
+.admin-switches{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 16px;
+}
+
+.admin-switches label{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 37px;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 9px;
+}
+
+.admin-switches input{
+    accent-color: var(--primary);
+}
+
+.repeater{
+    display: grid;
+    gap: 8px;
+    padding: 5px 16px 0;
+}
+
+.repeater-row{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 34px;
+    gap: 8px;
+    align-items: end;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: rgba(8, 10, 8, .34);
+}
+
+.repeater-row .admin-field{
+    margin: 0;
+}
+

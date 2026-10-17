@@ -1,0 +1,33 @@
+.icon {
+    --icon-size: 24px;
+    --icon-stroke: 2;
+
+    display: inline-flex;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    color: currentColor;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.icon svg{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.icon--small{
+    --icon-size: 18px;
+}
+
+.icon--big{
+    --icon-size: 32px;
+}
+
+.icon--thin {
+  --icon-stroke: 1.5;
+}
+
+.icon--bold {
+  --icon-stroke: 3;
+}

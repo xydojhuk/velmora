@@ -1,0 +1,151 @@
+/* Velmora alpha.2.2 visual stabilization. Last in the cascade by design.
+   Target forms and admin surfaces; leave the checkout and commerce logic alone. */
+
+/* 1. Stable widths: no clipped side columns or inputs escaping their cards. */
+.admin-main,.admin-content,.admin-page,.admin-panel,.settings-panel,
+.settings-grid,.admin-field,.builder-workspace,.builder-content,
+.category-form-grid,.category-create,.category-editor,.category-cards {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.admin-content { width:100%; max-width:1540px; margin-inline:auto; }
+.admin-page-head { gap:18px; }
+.admin-page-head > div:first-child { min-width:0; }
+.admin-field > input,.admin-field > select,.admin-field > textarea,
+.settings-panel textarea,.category-create textarea,.category-editor textarea {
+  display:block;
+  box-sizing:border-box;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+}
+.admin-field textarea { min-height:96px; resize:vertical; }
+.admin-field > span { display:block; margin-bottom:7px; }
+.settings-grid > *, .category-form-grid > *,
+.repeater-row > *, .storefront-form > *, .builder-accordion__body > * { min-width:0; }
+
+/* 3. Storefront Builder navigation, accordions and saving controls. */
+.builder-navigation { border-radius:13px; }
+.builder-current { align-items:center; }
+.builder-accordion { overflow:visible; border-radius:12px; }
+.builder-accordion + .builder-accordion { margin-top:4px; }
+.builder-accordion__summary { min-height:76px; padding:18px 22px; }
+.builder-accordion[open] > .builder-accordion__summary { border-bottom:1px solid var(--border); }
+.builder-accordion__body { padding:22px; min-width:0; }
+.builder-accordion__body > .settings-grid,
+.builder-accordion__body > .storefront-brand-grid { margin-bottom:18px; }
+.builder-accordion__body > .settings-grid:last-child { margin-bottom:0; }
+.builder-accordion__body .settings-grid { gap:18px; }
+.builder-accordion__body .admin-field { min-width:0; }
+.builder-accordion__body .repeater-row { max-width:100%; min-width:0; }
+.builder-current__actions { justify-content:flex-end; margin-left:auto; }
+.builder-current__actions button,.editor-toolbar button {
+  display:inline-flex; align-items:center; justify-content:center; min-height:38px;
+  border-radius:8px; background:var(--surface-2);
+  color:var(--text-secondary); border:1px solid var(--border);
+}
+.builder-current__actions button:hover,.editor-toolbar button:hover { border-color:var(--border-accent); color:var(--text); }
+.builder-savebar { display:flex; align-items:center; justify-content:flex-end; gap:20px;
+  min-height:88px; margin-top:24px; padding:18px 0 0; flex-wrap:wrap; }
+.builder-savebar__status { margin-right:auto; min-width:0; font-size:13px; line-height:1.5; }
+.builder-savebar__button { flex:0 0 auto; min-width:160px; min-height:46px; width:auto; padding-inline:24px; }
+.builder-savebar__button:disabled { opacity:.5; cursor:not-allowed; }
+
+/* 4. More comfortable account administration: compact status, readable actions. */
+.admin-users-page { max-width:none; }
+.admin-users-page .admin-mini-stats { display:grid; grid-template-columns:repeat(3,minmax(0,180px)); gap:12px; margin-bottom:22px; }
+.admin-users-page .admin-mini-stats > div { min-width:0; padding:18px; border-radius:10px; }
+.admin-users-page .admin-mini-stats small { font-size:12px; }
+.admin-users-page .admin-mini-stats strong { font-size:25px; }
+.admin-users-page .admin-toolbar { gap:12px; margin-bottom:18px; }
+.admin-users-page .admin-search { font-size:14px; }
+.admin-users-page .admin-table-wrap { overflow-x:auto; }
+.admin-users-page .admin-table { min-width:850px; table-layout:auto; }
+.admin-users-page .admin-table th { padding:16px; font-size:11px; }
+.admin-users-page .admin-table td { padding:18px 16px; font-size:13px; }
+.admin-users-page .admin-table td > strong { color:var(--text); font-size:14px; }
+.admin-users-page .admin-table td > small { font-size:12px; margin-top:6px; max-width:300px; }
+.admin-users-page .admin-row-actions { gap:7px; justify-content:flex-end; }
+.admin-users-page .admin-row-actions button { border:1px solid var(--border); border-radius:8px;
+  background:var(--surface-2); color:var(--text-secondary); padding:9px 11px;
+  min-height:38px; font-size:12px; cursor:pointer; }
+.admin-users-page .admin-row-actions button:hover { color:var(--text); border-color:var(--border-accent); }
+.admin-users-page .admin-row-actions button:last-child { color:var(--accent-soft); }
+.admin-users-page .admin-row-actions button:last-child:hover { border-color:var(--accent); }
+.admin-users-page .role-badge,.admin-users-page .status-badge { font-size:12px; padding:6px 10px; }
+.admin-users-page .users-empty { padding:30px; color:var(--text-secondary); text-align:center; }
+
+/* 5. Project settings live in one discoverable destination. */
+.admin-nav__divider { margin:14px 12px 6px; border-top:1px solid var(--border); }
+.project-about-grid { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr); gap:20px; align-items:start; }
+.project-about-hero,.project-release-card { min-width:0; padding:clamp(22px,3vw,36px); border-radius:14px; }
+.project-about-mark { width:54px; height:54px; border-radius:12px; display:grid; place-items:center; background:var(--surface-2); color:var(--accent); font-size:23px; margin-bottom:24px; }
+.project-about-eyebrow { color:var(--accent-soft); font-size:11px; font-weight:650; letter-spacing:.1em; }
+.project-about-hero h2 { font-family:'Tektur',sans-serif; font-size:clamp(25px,3vw,37px); line-height:1.2; margin:12px 0; }
+.project-about-hero > p:not(.project-about-eyebrow),.project-release-card > p:not(.project-about-eyebrow) { color:var(--text-secondary); line-height:1.75; margin:14px 0 25px; font-size:14px; }
+.project-about-hero > .btn { display:inline-flex; min-height:44px; }
+.project-release-number { display:block; overflow-wrap:anywhere; font-family:'Tektur',sans-serif; font-size:clamp(22px,3.3vw,35px); margin:14px 0; color:var(--text); }
+.project-release-card .project-release-meta { border-top:1px solid var(--border); padding-top:18px; }
+.project-repo-link { color:var(--accent); font-size:14px; }
+
+/* 6. Global modal sizing. The overlay is centered even on short mobile displays. */
+.site-modal { align-items:center; justify-items:center; }
+.site-modal__dialog { border-radius:14px; }
+.site-modal__dialog > .site-modal__title { padding-right:44px; overflow-wrap:anywhere; }
+.site-modal__stats > div,.site-modal__card { overflow-wrap:anywhere; }
+
+@media (max-width: 1180px) {
+  .project-about-grid { grid-template-columns:1fr; }
+}
+@media (max-width: 900px) {
+  .builder-workspace { grid-template-columns:minmax(0,1fr); }
+}
+@media (max-width: 720px) {
+  .builder-current { padding:16px; }
+  .builder-accordion__body { padding:16px; }
+  .builder-accordion__summary { padding:15px 16px; }
+  .builder-savebar { align-items:stretch; gap:12px; }
+  .builder-savebar__status { width:100%; }
+  .builder-savebar__button { width:100%; min-width:0; }
+  .admin-users-page .admin-mini-stats { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .admin-users-page .admin-mini-stats > div { padding:12px; }
+  .admin-users-page .admin-mini-stats strong { font-size:20px; }
+  .project-about-hero,.project-release-card { padding:20px; }
+}
+@media (max-width: 480px) {
+  .admin-users-page .admin-mini-stats > div { padding:10px; }
+  .admin-users-page .admin-mini-stats small { font-size:10px; }
+}
+
+/* Accounts turn into readable vertical cards on narrow screens. */
+@media (max-width: 780px) {
+  .admin-users-page .admin-table { min-width:0; }
+  .admin-users-page .users-table thead { display:none; }
+  .admin-users-page .users-table tbody { display:grid; gap:12px; padding:12px; }
+  .admin-users-page .users-table tr { display:grid; gap:3px; padding:12px 16px; border:1px solid var(--border); border-radius:12px; background:var(--surface); }
+  .admin-users-page .users-table td { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:10px 0; border:0; text-align:right; min-width:0; overflow-wrap:anywhere; }
+  .admin-users-page .users-table td:first-child { display:block; text-align:left; padding-bottom:16px; margin-bottom:5px; border-bottom:1px solid var(--border); }
+  .admin-users-page .users-table td:not(:first-child)::before { content:attr(data-label); color:var(--text-muted); font-size:12px; text-align:left; flex:0 0 75px; }
+  .admin-users-page .users-table td[data-label="Actions"] { display:block; padding-top:14px; margin-top:6px; border-top:1px solid var(--border); }
+  .admin-users-page .users-table td[data-label="Actions"]::before { display:block; margin-bottom:12px; }
+  .admin-users-page .users-table .admin-row-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .admin-users-page .users-table .admin-row-actions button { white-space:normal; }
+}
+/* Normalize native <button> and <a> in the Storefront header. */
+.storefront-editor .admin-head-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.storefront-editor .admin-head-actions .admin-back {
+  display:inline-flex; align-items:center; justify-content:center; width:auto;
+  min-height:42px; padding:10px 16px; border:1px solid var(--border);
+  border-radius:8px; background:var(--surface-2); color:var(--text-secondary);
+  font:inherit; font-size:13px; line-height:1.35; text-decoration:none;
+  cursor:pointer; white-space:normal;
+}
+.storefront-editor .admin-head-actions .admin-back:hover,
+.storefront-editor .admin-head-actions .admin-back:focus-visible {
+  background:var(--surface-3); border-color:var(--border-accent); color:var(--text);
+}
+@media(max-width:560px) {
+  .storefront-editor .admin-head-actions { width:100%; }
+  .storefront-editor .admin-head-actions .admin-back { flex:1 1 auto; }
+}

@@ -1,0 +1,65 @@
+@media (max-width: 520px){
+    .detail-gallery__main{
+        aspect-ratio: 1;
+    }
+
+    .detail-gallery__thumbs{
+        grid-template-columns: repeat(4, minmax(64px, 1fr));
+        overflow-x: auto;
+        padding-bottom: 2px;
+    }
+
+    .detail-summary__title{
+        font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .detail-summary__price{
+        margin-top: 18px;
+    }
+
+    .detail-summary__actions{
+        grid-template-columns: 1fr;
+    }
+
+    .detail-benefits{
+        grid-template-columns: 1fr;
+    }
+
+    .detail-benefit,
+    .detail-benefit:nth-child(2){
+        border-right: 0;
+        border-bottom: 1px solid var(--border-accent);
+    }
+
+    .detail-benefit:last-child{
+        border-bottom: 0;
+    }
+
+    .detail-tabs{
+        gap: 20px;
+        padding-inline: 14px;
+    }
+
+    .detail-tab{
+        font-size: 11px;
+    }
+
+    .detail-panel{
+        padding: 14px;
+    }
+
+    .detail-panel__visual,
+    .detail-panel__visual img{
+        min-height: 320px;
+    }
+
+    .detail-secondary__card{
+        padding: 18px;
+    }
+
+    .detail-secondary__columns{
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+}

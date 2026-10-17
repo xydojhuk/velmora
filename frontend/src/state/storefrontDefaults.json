@@ -1,0 +1,240 @@
+{
+  "branding": {
+    "logo_url": "/img/logo.png",
+    "logo_alt": "Velmora"
+  },
+  "theme": {
+    "background": "#080A08",
+    "background_soft": "#0D100D",
+    "surface": "#121612",
+    "surface_alt": "#181D17",
+    "primary": "#7F8647",
+    "accent": "#A1A65A",
+    "accent_soft": "#777C43",
+    "text": "#F2F3EE",
+    "text_secondary": "#B7BAAE",
+    "border": "#2C3327"
+  },
+  "announcement": {
+    "enabled": false,
+    "text": "",
+    "link_label": "",
+    "link_url": ""
+  },
+  "header": {
+    "show_phone": true,
+    "show_hours": false,
+    "show_consultation": true,
+    "consultation_label": "Request consultation",
+    "nav": [
+      {
+        "key": "home",
+        "label": "Home",
+        "enabled": true
+      },
+      {
+        "key": "catalog",
+        "label": "Catalog",
+        "enabled": true
+      },
+      {
+        "key": "about",
+        "label": "About",
+        "enabled": true
+      },
+      {
+        "key": "shipping",
+        "label": "Shipping & payment",
+        "enabled": true
+      },
+      {
+        "key": "faq",
+        "label": "FAQ",
+        "enabled": true
+      },
+      {
+        "key": "contacts",
+        "label": "Contacts",
+        "enabled": true
+      }
+    ]
+  },
+  "hero": {
+    "enabled": true,
+    "eyebrow": "Welcome to Velmora",
+    "title": "YOUR STORE. YOUR RULES.",
+    "description": "Explore our catalog and discover products selected for you.",
+    "image_url": "",
+    "primary_action": {
+      "enabled": true,
+      "label": "View catalog",
+      "action": "catalog",
+      "url": ""
+    },
+    "secondary_action": {
+      "enabled": true,
+      "label": "Ask a question",
+      "action": "contacts",
+      "url": ""
+    },
+    "features": []
+  },
+  "catalog": {
+    "show_heading": false,
+    "title": "Catalog",
+    "description": "Choose a product configuration."
+  },
+  "feature_strip": {
+    "enabled": true,
+    "items": [
+      {
+        "icon": "shield-check",
+        "title": "Your store",
+        "text": "Manage products from your own dashboard"
+      },
+      {
+        "icon": "cart",
+        "title": "Easy ordering",
+        "text": "A simple checkout experience"
+      }
+    ]
+  },
+  "faq": {
+    "enabled": true,
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "Can I place an order?",
+        "answer": "Available shipping and payment methods are shown at checkout."
+      },
+      {
+        "question": "Can I change this content?",
+        "answer": "Yes. Hero content, navigation, feature blocks, FAQ, modal content, footer sections, brand assets and theme colors are configurable from the admin panel."
+      },
+      {
+        "question": "How are orders processed?",
+        "answer": "Customers choose an active shipping and payment method during checkout. Store staff can then manage the order from the administration panel."
+      }
+    ]
+  },
+  "footer": {
+    "show_menu": true,
+    "show_products": true,
+    "show_contacts": true,
+    "show_callback": true,
+    "callback_title": "Need help choosing?",
+    "callback_text": "Contact us and we will help you choose the right product.",
+    "callback_button_label": "Contact us",
+    "copyright": "© {year} {store}. All rights reserved."
+  },
+  "platform": {
+    "enabled": true,
+    "eyebrow": "INDEPENDENT OPEN-SOURCE SOFTWARE",
+    "title": "Velmora — your store, your server.",
+    "description": "Velmora is a self-hosted e-commerce platform. This shop runs on an independent installation controlled by its owner.",
+    "support_title": "Support open-source development",
+    "support_text": "Velmora is an independent open-source project. Explore the project on GitHub, share feedback, and support its continued development.",
+    "footer_label": "Powered by Velmora",
+    "repository_label": "Project on GitHub",
+    "repository_url": "https://github.com/xydojhuk/velmora",
+    "support_label": "Support the project",
+    "support_url": ""
+  },
+  "modals": {
+    "about": {
+      "enabled": true,
+      "eyebrow": "ABOUT {store}",
+      "title": "Discover our store",
+      "lead": "Browse our selection, compare product specifications and find the right option for your needs. Our team can help with product questions and orders.",
+      "stats": [
+        {
+          "value": "Care",
+          "label": "product selection"
+        },
+        {
+          "value": "Online",
+          "label": "browse anytime"
+        }
+      ],
+      "cards": [
+        {
+          "title": "Product information",
+          "text": "Find specifications, photos and practical details on every product page."
+        },
+        {
+          "title": "Personal assistance",
+          "text": "Need help choosing? Contact us and we will answer your questions."
+        }
+      ],
+      "callout_title": "Have a question?",
+      "callout_text": "Get in touch before placing your order if you need more information."
+    },
+    "shipping": {
+      "enabled": true,
+      "eyebrow": "ORDER / SHIPPING / PAYMENT",
+      "title": "Ordering and delivery",
+      "lead": "Place your order online and choose from the available delivery and payment options at checkout. We will keep you informed about your order.",
+      "steps": [
+        {
+          "title": "Select your item",
+          "text": "Choose your product and review its details before ordering."
+        },
+        {
+          "title": "Confirm your details",
+          "text": "Enter contact information so we can confirm and process your order."
+        },
+        {
+          "title": "Choose payment",
+          "text": "Select one of the payment options available during checkout."
+        },
+        {
+          "title": "Order processing",
+          "text": "We prepare your order and share delivery details when they are available."
+        }
+      ],
+      "sections": [
+        {
+          "title": "Before you order",
+          "items": [
+            "Check the product details and availability",
+            "Select a delivery method at checkout",
+            "Provide accurate contact information"
+          ]
+        },
+        {
+          "title": "Order assistance",
+          "items": [
+            "Keep your order number for future enquiries",
+            "Contact us if you need to update your order details"
+          ]
+        }
+      ],
+      "note": "Available delivery and payment options are shown during checkout. Contact us for details about returns and warranties."
+    },
+    "contacts": {
+      "title": "Order and product support",
+      "lead": "Contact the store for product, order, setup, and warranty questions.",
+      "email_note": "Orders and support",
+      "region_note": "Shipping and support coverage",
+      "cards": [
+        {
+          "eyebrow": "BEFORE PURCHASE",
+          "title": "Choose the right product",
+          "text": "Ask questions before ordering if you are unsure which product fits your needs."
+        },
+        {
+          "eyebrow": "AFTER PURCHASE",
+          "title": "Order support",
+          "text": "Use your order number when contacting the store about an existing purchase."
+        },
+        {
+          "eyebrow": "WARRANTY",
+          "title": "Warranty questions",
+          "text": "Describe the issue and attach photos or video when useful."
+        }
+      ],
+      "callout_title": "What to include in your message",
+      "callout_text": "Include the product name, order number if available, and a short description of your question."
+    }
+  }
+}

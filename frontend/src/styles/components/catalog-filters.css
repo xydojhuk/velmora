@@ -1,0 +1,7 @@
+/* Responsive catalog controls, applied to all store themes. */
+.catalog-filters { display:grid; grid-template-columns:minmax(0, 2fr) minmax(160px, 1fr) auto; gap:12px; padding:16px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); }
+.catalog-filters label { display:flex; flex-direction:column; gap:7px; color:var(--text-secondary); font-size:12px; min-width:0; }
+.catalog-filters input[type="search"], .catalog-filters select { width:100%; min-width:0; padding:12px; color:var(--text); border:1px solid var(--border-light); border-radius:var(--radius-md); background:var(--bg-soft); }
+.catalog-filters__check { flex-direction:row !important; align-items:center; gap:8px !important; padding:16px 8px 0; }
+.catalog-filters__check input { accent-color:var(--primary); }
+@media(max-width:700px) { .catalog-filters { grid-template-columns:1fr; } .catalog-filters__check { padding:0; } }

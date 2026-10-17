@@ -1,0 +1,257 @@
+.detail-package ul{
+    display: grid;
+    gap: 10px;
+    padding-left: 20px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.detail-secondary{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--section-gap);
+    margin: var(--section-gap) 0;
+}
+
+.detail-secondary__card{
+    --ui-card-border: var(--border-light);
+    --ui-card-bg: var(--bg-soft);
+    min-height: 220px;
+    padding: 24px;
+}
+
+.detail-secondary__card h2{
+    font-size: 20px;
+}
+
+.detail-secondary__columns{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 22px;
+}
+
+.detail-secondary__columns > div{
+    position: relative;
+    padding-left: 46px;
+}
+
+.detail-secondary__columns .icon{
+    --icon-size: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--accent);
+}
+
+.detail-secondary__columns h3{
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.detail-secondary__columns p{
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.detail-secondary__link{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.detail-secondary__link .icon{
+    --icon-size: 16px;
+}
+
+.detail-secondary__card--accent{
+    background:
+        radial-gradient(circle at 88% 50%, rgba(127, 134, 71, .15), transparent 34%),
+        var(--bg-soft);
+}
+
+.detail-checks{
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 0;
+    list-style: none;
+}
+
+.detail-checks li{
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.detail-checks .icon{
+    --icon-size: 19px;
+    --icon-stroke: 1.5;
+    color: var(--accent);
+}
+
+@media (max-width: 1160px){
+    .detail-hero{
+        grid-template-columns: minmax(0, 1fr) minmax(330px, .86fr);
+        gap: 24px;
+    }
+
+    .detail-gallery__main{
+        aspect-ratio: 1.12;
+    }
+
+    .detail-benefit{
+        padding-inline: 14px;
+    }
+
+    .detail-benefit__icon{
+        --icon-size: 36px;
+    }
+
+}
+
+@media (max-width: 920px){
+    .product-page{
+        padding-top: 18px;
+    }
+
+    .detail-hero{
+        grid-template-columns: 1fr;
+    }
+
+    .detail-summary{
+        position: static;
+        padding: 10px 6px 0;
+    }
+
+    .detail-summary__title{
+        max-width: 760px;
+    }
+
+    .detail-summary__description{
+        max-width: 760px;
+    }
+
+    .detail-summary__features{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 760px;
+    }
+
+    .detail-summary__actions{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .detail-benefits{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .detail-benefit:nth-child(2){
+        border-right: 0;
+    }
+
+    .detail-benefit:nth-child(-n + 2){
+        border-bottom: 1px solid var(--border-accent);
+    }
+
+    .detail-panel.active{
+        grid-template-columns: 1fr;
+    }
+
+    .detail-secondary{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px){
+    .breadcrumbs{
+        padding-top: 6px;
+    }
+
+    .detail-gallery__main{
+        aspect-ratio: 1.08;
+    }
+
+    .detail-gallery__badge{
+        top: 14px;
+        left: 14px;
+    }
+
+    .detail-gallery__zoom{
+        top: 14px;
+        right: 14px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .detail-gallery__thumbs{
+        gap: 7px;
+    }
+
+    .detail-summary__subtitle{
+        font-size: 14px;
+    }
+
+    .detail-summary__features{
+        grid-template-columns: 1fr;
+    }
+
+    .detail-benefits{
+        padding: 10px;
+    }
+
+    .detail-benefit{
+        min-height: 94px;
+        padding: 12px;
+    }
+
+    .detail-benefit__icon{
+        --icon-size: 32px;
+    }
+
+    .detail-tabs{
+        gap: 24px;
+        padding-inline: 16px;
+    }
+
+    .detail-panel{
+        padding: 18px;
+    }
+
+    .detail-panel__visual-features{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .detail-panel__visual{
+        min-height: 380px;
+    }
+
+    .detail-panel__visual img{
+        min-height: 380px;
+    }
+
+    .detail-specs dl div{
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .detail-specs dd{
+        text-align: left;
+    }
+
+}
+

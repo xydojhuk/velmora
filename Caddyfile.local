@@ -1,0 +1,41 @@
+{
+    auto_https off
+    admin off
+}
+
+http://velmora.local {
+    encode zstd gzip
+
+    header {
+        -Server
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    }
+
+    @installer path /api/v1/install /api/v1/install/*
+    handle @installer {
+        reverse_proxy installer:8080
+    }
+
+    @api path /api/*
+    handle @api {
+        reverse_proxy backend:8000
+    }
+
+    @backend_docs path /docs /openapi.json
+    handle @backend_docs {
+        reverse_proxy backend:8000
+    }
+
+    @media path /media/*
+    handle @media {
+        header Cache-Control "public, max-age=3600"
+        reverse_proxy backend:8000
+    }
+
+    handle {
+        reverse_proxy frontend:5173
+    }
+}

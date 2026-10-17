@@ -1,0 +1,26 @@
+services:
+  postgres:
+    # Local/rootless Docker: use the official PostgreSQL entrypoint unchanged.
+    # PostgreSQL 18 creates/chowns PGDATA itself; overriding entrypoint breaks
+    # that initialization on rootless Docker named volumes.
+    environment:
+      POSTGRES_PASSWORD: ${VELMORA_LOCAL_PG_BOOTSTRAP_PASSWORD}
+      POSTGRES_PASSWORD_FILE: ""
+
+  installer:
+    environment:
+      VELMORA_BOOTSTRAP_MODE: local
+      VELMORA_SITE_URL: http://velmora.local
+      VELMORA_LOCAL_SETUP_TOKEN: ${VELMORA_LOCAL_SETUP_TOKEN}
+      VELMORA_LOCAL_PG_BOOTSTRAP_PASSWORD: ${VELMORA_LOCAL_PG_BOOTSTRAP_PASSWORD}
+    # Local installer reads bootstrap credentials from .env.local. The legacy
+    # /bootstrap bind from the base compose may exist, but local logic does not
+    # depend on its host permissions.
+
+  frontend:
+    environment:
+      SITE_URL: http://velmora.local
+
+  caddy:
+    volumes:
+      - ./Caddyfile.local:/etc/caddy/Caddyfile:ro,Z

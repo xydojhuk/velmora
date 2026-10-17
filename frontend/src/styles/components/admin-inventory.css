@@ -1,0 +1,5 @@
+/* UI controls for the optional stock system. */
+.admin-stock-toggle { display:inline-flex; gap:8px; align-items:center; font-size:13px; color:var(--text-secondary); }
+.admin-stock-toggle input { accent-color:var(--primary); }
+.admin-toolbar > a { display:inline-flex; align-items:center; padding:8px 12px; border:1px solid var(--border-light); border-radius:var(--radius-md); color:var(--text); font-size:12px; }
+.admin-toolbar > a:hover { border-color:var(--accent); }

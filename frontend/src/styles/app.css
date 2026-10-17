@@ -1,0 +1,29 @@
+@import './var.css';
+@import './main.css';
+@import './icons.css';
+@import './shared.css';
+@import './components/header.css';
+@import './components/hero.css';
+@import './components/product.css';
+@import './components/catalog-filters.css';
+@import './components/features.css';
+@import './components/faq.css';
+@import './components/footer.css';
+@import './components/velmora-about.css';
+@import './components/modal.css';
+@import './components/product-detail.css';
+@import './storefront-extra.css';
+@import './checkout.css';
+@import './auth.css';
+@import './admin.css';
+@import './components/admin-inventory.css';
+@import './components/admin-ux.css';
+
+@import './installer.css';
+@import './accessibility.css';
+
+@import './design-polish.css';
+
+/* Scoped editor corrections loaded after global design polish. */
+@import './components/admin-categories.css';
+@import './components/builder-copy-layout.css';

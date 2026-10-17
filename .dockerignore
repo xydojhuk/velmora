@@ -1,0 +1,14 @@
+# Root context used only for the frontend image. Never ship local state to Docker build.
+.git
+**/.env
+**/.env.*
+**/.bootstrap
+**/.local
+**/backups
+**/node_modules
+**/dist
+**/__pycache__
+**/.pytest_cache
+*.dump
+*.sql
+*.zip

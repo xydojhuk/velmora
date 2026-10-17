@@ -1,0 +1,76 @@
+# Velmora — local configuration and secrets
+# Commit examples only; never commit actual runtime settings.
+.env
+.env.*
+!.env.example
+!.env.*.example
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+.npmrc
+.pypirc
+.secrets/
+secrets/
+.bootstrap/
+.local/
+backups/
+
+# Python virtual environments, caches and test artifacts
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.egg-info/
+
+# JavaScript dependencies, builds, and caches
+node_modules/
+dist/
+build/
+.vite/
+.npm/
+*.tsbuildinfo
+coverage/
+
+# User-generated media, databases, logs and local release archives
+media/
+uploads/
+storage/
+*.dump
+*.db
+*.sqlite
+*.sqlite3
+*.sql.gz
+*.tar.gz
+*.tgz
+*.zip
+*.log
+*.pdf
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+release/
+
+# Editor / operating system artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

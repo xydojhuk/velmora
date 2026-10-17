@@ -1,0 +1,231 @@
+.checkout-summary__quantity button{
+    height: 34px;
+    border: 0;
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 16px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.checkout-summary__quantity button:hover{
+    background: var(--surface-3);
+    color: var(--accent);
+}
+
+.checkout-summary__quantity strong{
+    text-align: center;
+    font-size: 12px;
+}
+
+.checkout-summary dl{
+    display: grid;
+    gap: 11px;
+    margin-top: 17px;
+}
+
+.checkout-summary dl > div{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.checkout-summary dd{
+    color: var(--text);
+    font-weight: 600;
+    text-align: right;
+}
+
+.checkout-summary__total{
+    margin-top: 4px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-light);
+    font-size: 13px !important;
+}
+
+.checkout-summary__total dt{
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.checkout-summary__total dd{
+    color: var(--accent);
+    font-family: "Tektur", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.checkout-summary__trust{
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    margin-top: 18px;
+    padding: 13px;
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-sm);
+    background: rgba(127, 134, 71, .07);
+    color: var(--accent);
+}
+
+.checkout-summary__trust span{
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.checkout-summary__trust strong{
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+.checkout-summary__trust small{
+    overflow-wrap: anywhere;
+    color: var(--text-muted);
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.checkout-success{
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+    margin: 56px auto 88px;
+    padding: clamp(24px, 5vw, 44px);
+    --ui-card-bg: linear-gradient(145deg, rgba(24, 29, 23, .96), rgba(13, 16, 13, .94));
+    --ui-card-border: var(--border-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.checkout-success__icon{
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border-accent);
+    border-radius: 50%;
+    background: rgba(127, 134, 71, .08);
+    color: var(--accent);
+}
+
+.checkout-success__content{
+    min-width: 0;
+}
+
+.checkout-success__actions{
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+@media (max-width: 980px){
+    .checkout-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-summary{
+        position: static;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: minmax(180px, .72fr) minmax(0, 1.28fr);
+        column-gap: 20px;
+        align-items: start;
+    }
+
+    .checkout-summary .checkout-kicker,
+    .checkout-summary__image{
+        grid-column: 1;
+    }
+
+    .checkout-summary h2,
+    .checkout-summary > p:not(.checkout-kicker),
+    .checkout-summary__quantity,
+    .checkout-summary dl,
+    .checkout-summary__trust{
+        grid-column: 2;
+    }
+
+    .checkout-summary h2{
+        grid-row: 1;
+        margin-top: 0;
+        padding-top: 1px;
+    }
+
+    .checkout-summary > p:not(.checkout-kicker){
+        grid-row: 2;
+        align-self: start;
+    }
+
+    .checkout-summary__quantity{
+        grid-row: 3;
+    }
+
+    .checkout-summary dl{
+        grid-row: 4;
+    }
+
+    .checkout-summary__trust{
+        grid-row: 5;
+    }
+}
+
+@media (max-width: 700px){
+    .checkout-page{
+        padding-top: 14px;
+        padding-bottom: 34px;
+    }
+
+    .checkout-breadcrumbs{
+        margin-bottom: 4px;
+        font-size: 10px;
+    }
+
+    .checkout-section{
+        padding: 16px;
+    }
+
+    .checkout-option-grid,
+    .form-grid--2,
+    .checkout-method-fields{
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-field--wide{
+        grid-column: auto;
+    }
+
+    .checkout-summary{
+        display: block;
+    }
+
+    .checkout-summary__image{
+        aspect-ratio: 1.65;
+    }
+
+    .checkout-summary h2{
+        margin-top: 14px;
+    }
+
+    .checkout-success{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .checkout-success__icon{
+        margin-inline: auto;
+    }
+
+    .checkout-success__content > p:not(.checkout-kicker){
+        margin-inline: auto;
+    }
+
+    .checkout-success__actions{
+        justify-content: center;
+    }
+}
+

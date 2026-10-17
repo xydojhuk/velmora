@@ -1,0 +1,232 @@
+.admin-pagination button{
+    width: 31px;
+    height: 29px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: var(--surface);
+    color: var(--text-secondary);
+}
+
+.admin-pagination button:disabled{
+    opacity: .35;
+}
+
+.admin-empty-cell{
+    padding: 24px !important;
+    color: var(--text-muted) !important;
+    text-align: center;
+}
+
+.admin-order-grid{
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(350px, .65fr);
+    gap: 14px;
+    align-items: start;
+}
+
+.admin-order-main{
+    min-width: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.admin-order-editor{
+    position: sticky;
+    top: 86px;
+    padding-bottom: 16px;
+}
+
+.admin-contact-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 5px 17px 17px;
+}
+
+.admin-contact-grid > div{
+    min-width: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.admin-contact-grid > div:nth-child(odd){
+    padding-right: 18px;
+}
+
+.admin-contact-grid > div:nth-child(even){
+    padding-left: 18px;
+    border-left: 1px solid var(--border);
+}
+
+.admin-contact-grid > div:nth-last-child(-n + 2){
+    border-bottom: 0;
+}
+
+.admin-contact-grid small,
+.admin-contact-grid span,
+.admin-contact-grid a{
+    display: block;
+}
+
+.admin-contact-grid small{
+    margin-bottom: 5px;
+    color: var(--text-muted);
+    font-size: 7px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.admin-contact-grid span,
+.admin-contact-grid a{
+    overflow-wrap: anywhere;
+    color: var(--text-secondary);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.order-items{
+    padding: 4px 17px;
+}
+
+.order-item{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.order-item strong{
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+.order-item small{
+    display: block;
+    margin-top: 3px;
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+.order-item > span{
+    color: var(--text-muted);
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.order-totals{
+    margin: 0;
+    padding: 10px 17px 16px;
+}
+
+.order-totals div{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 7px 0;
+    color: var(--text-muted);
+    font-size: 9px;
+}
+
+.order-totals div:last-child{
+    margin-top: 5px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    font-size: 11px;
+}
+
+.order-totals dt,
+.order-totals dd{
+    margin: 0;
+}
+
+.order-history{
+    padding: 12px 17px 17px;
+}
+
+.order-history__item{
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    gap: 10px;
+    padding: 5px 0 14px;
+}
+
+.order-history__item > span{
+    position: relative;
+    width: 8px;
+    height: 8px;
+    margin-top: 4px;
+    border: 1px solid var(--accent-soft);
+    border-radius: 50%;
+    background: var(--bg-soft);
+}
+
+.order-history__item > span::after{
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 3px;
+    width: 1px;
+    height: calc(100% + 26px);
+    background: var(--border);
+}
+
+.order-history__item:last-child > span::after{
+    display: none;
+}
+
+.order-history__item strong{
+    color: var(--text-secondary);
+    font-size: 9px;
+}
+
+.order-history__item p{
+    margin: 4px 0;
+    color: var(--text-muted);
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.order-history__item small{
+    color: var(--text-muted);
+    font-size: 8px;
+}
+
+.admin-field{
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 12px 16px 0;
+}
+
+.admin-field > span,
+.admin-icon-field > span{
+    color: var(--text-muted);
+    font-size: 8px;
+    font-weight: 600;
+}
+
+.admin-field input,
+.admin-field select,
+.admin-field textarea{
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 10px;
+    outline: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: rgba(8, 10, 8, .72);
+    color: var(--text-secondary);
+    font: inherit;
+    font-size: 10px;
+    transition: border-color var(--transition), background var(--transition);
+}
+
+.admin-field textarea{
+    min-height: 92px;
+    resize: vertical;
+    line-height: 1.55;
+}
+

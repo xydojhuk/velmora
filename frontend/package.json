@@ -1,0 +1,33 @@
+{
+  "name": "velmora-storefront",
+  "private": true,
+  "version": "0.1.0-alpha.2.4",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
+    "start": "NODE_ENV=production node server.js",
+    "preview": "NODE_ENV=production node server.js",
+    "check": "node scripts/check-project.mjs",
+    "check:seo": "node scripts/seo-smoke.mjs",
+    "check:api": "node scripts/api-smoke.mjs"
+  },
+  "dependencies": {
+    "@unhead/vue": "^3.3.1",
+    "axios": "^1.11.0",
+    "chart.js": "^4.5.0",
+    "express": "^5.1.0",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "vite": "^7.1.2",
+    "@vue/compiler-sfc": "^3.5.18"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

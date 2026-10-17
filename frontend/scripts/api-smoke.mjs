@@ -1,0 +1,6 @@
+const base = String(process.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1').replace(/\/$/, '')
+const response = await fetch(`${base}/public/products`)
+if (!response.ok) throw new Error(`API returned ${response.status}`)
+const products = await response.json()
+if (!Array.isArray(products)) throw new Error('Products endpoint did not return an array')
+console.log(`API is reachable. Public products: ${products.length}`)

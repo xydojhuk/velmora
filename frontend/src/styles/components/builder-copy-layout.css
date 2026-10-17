@@ -1,0 +1,87 @@
+/* Modal copy editor: clear hierarchy, stable input widths, readable repeaters. */
+.storefront-editor .builder-section-intro {
+  margin: 0 0 20px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.storefront-editor .builder-accordion__body > .settings-switch,
+.storefront-editor .builder-accordion__body > .settings-grid { margin-bottom: 18px; }
+.storefront-editor .builder-accordion__body > .settings-grid:last-child { margin-bottom: 0; }
+.storefront-editor .builder-accordion__body > .settings-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px 0 16px;
+  padding: 0 0 14px;
+  border-bottom: 1px solid var(--border);
+}
+.storefront-editor .builder-accordion__body > .settings-section-head .builder-subsection-title {
+  display: block;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 650;
+}
+.storefront-editor .builder-subsection-note {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.storefront-editor .builder-accordion__body > .repeater {
+  padding: 0;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+.storefront-editor .repeater-row--two-fields {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr) 40px;
+  gap: 14px;
+  padding: 16px;
+  align-items: end;
+}
+.storefront-editor .repeater-row--two-fields > .admin-field { min-width: 0; }
+.storefront-editor .repeater-row--two-fields > button.repeater-remove {
+  width: 40px;
+  min-height: 40px;
+  align-self: end;
+}
+.storefront-editor .builder-accordion__body > .settings-grid,
+.storefront-editor .builder-accordion__body > .storefront-list,
+.storefront-editor .builder-accordion__body > .repeater { min-width: 0; }
+@media (max-width: 700px) {
+  .storefront-editor .repeater-row--two-fields { grid-template-columns: minmax(0,1fr) 40px; }
+  .storefront-editor .repeater-row--two-fields > .admin-field { grid-column: 1; }
+  .storefront-editor .repeater-row--two-fields > button.repeater-remove {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+}
+
+/* Contact cards have three editable fields, not two. */
+.storefront-editor .repeater-row--three-fields {
+  display: grid;
+  grid-template-columns: minmax(0,.7fr) minmax(0,1fr) minmax(0,1.4fr) 40px;
+  gap: 12px;
+  align-items: end;
+  padding: 16px;
+}
+.storefront-editor .repeater-row--three-fields > .admin-field { min-width:0; }
+@media(max-width: 1000px) {
+  .storefront-editor .repeater-row--three-fields { grid-template-columns: minmax(0,1fr) 40px; }
+  .storefront-editor .repeater-row--three-fields > .admin-field { grid-column: 1; }
+  .storefront-editor .repeater-row--three-fields > button.repeater-remove {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    align-self:center;
+    width:40px;
+  }
+}

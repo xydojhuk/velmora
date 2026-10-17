@@ -1,0 +1,14 @@
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.env
+media
+.git
+.gitignore
+README.md
+SECURITY.md
+requirements-dev.txt
+tests
+compose.yaml
+deploy

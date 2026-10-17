@@ -1,0 +1,15 @@
+{
+  "name": "Velmora",
+  "short_name": "Velmora",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080A08",
+  "theme_color": "#080A08",
+  "icons": [
+    {
+      "src": "/brand/velmora-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

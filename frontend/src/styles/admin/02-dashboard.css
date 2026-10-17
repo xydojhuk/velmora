@@ -1,0 +1,238 @@
+.admin-page-head{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+}
+
+.admin-page-head > div:first-child{
+    min-width: 0;
+}
+
+.admin-page-head > div:first-child > p{
+    margin: 0;
+    color: var(--accent-soft);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .18em;
+}
+
+.admin-page-head h1{
+    margin: 7px 0 0;
+    color: var(--text);
+    font-size: clamp(28px, 3.4vw, 44px);
+    font-weight: 500;
+    line-height: 1.02;
+}
+
+.admin-page-head > div:first-child > span{
+    display: block;
+    max-width: 720px;
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.admin-counter,
+.admin-back{
+    flex-shrink: 0;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.admin-back{
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.admin-back:hover{
+    border-color: var(--border-accent);
+    color: var(--text-secondary);
+}
+
+.admin-create{
+    flex-shrink: 0;
+    min-height: 40px;
+    gap: 7px;
+}
+
+.admin-create .icon{
+    --icon-size: 16px;
+}
+
+.admin-panel{
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgba(68, 76, 56, .62);
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(19, 23, 18, .88), rgba(13, 16, 13, .9));
+    box-shadow: 0 16px 42px rgba(0, 0, 0, .12);
+    padding-bottom: 16px;
+}
+
+.admin-panel-head{
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 14px 17px;
+    border-bottom: 1px solid var(--border);
+}
+
+.admin-panel-head > div{
+    min-width: 0;
+}
+
+.admin-panel-head small{
+    display: block;
+    color: var(--accent-soft);
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+
+.admin-panel-head h2{
+    margin: 4px 0 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-panel-head p{
+    max-width: 650px;
+    margin: 5px 0 0;
+    color: var(--text-muted);
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.admin-panel-head > a,
+.admin-panel-head > button,
+.admin-panel-action{
+    flex-shrink: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-muted);
+    font: inherit;
+    font-size: 9px;
+}
+
+.admin-panel-head > a:hover,
+.admin-panel-head > button:hover,
+.admin-panel-action:hover{
+    color: var(--accent);
+}
+
+.admin-stats{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.admin-stats article{
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 3px 12px;
+    padding: 17px;
+    border: 1px solid rgba(68, 76, 56, .62);
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(22, 27, 21, .92), rgba(12, 15, 12, .9));
+}
+
+.admin-stat-icon{
+    grid-row: 1 / 4;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(127, 134, 71, .45);
+    border-radius: 7px;
+    background: rgba(127, 134, 71, .07);
+    color: var(--accent);
+}
+
+.admin-stat-icon .icon{
+    --icon-size: 19px;
+}
+
+.admin-stats small{
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-stats strong{
+    overflow: hidden;
+    color: var(--text);
+    font-family: "Tektur", sans-serif;
+    font-size: clamp(20px, 2.1vw, 29px);
+    font-weight: 500;
+    line-height: 1.1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-stats em{
+    overflow: hidden;
+    color: var(--text-muted);
+    font-size: 8px;
+    font-style: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-chart-grid{
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(300px, .7fr);
+    gap: 14px;
+}
+
+.admin-chart-panel{
+    min-height: 390px;
+}
+
+.admin-chart{
+    height: 320px;
+    padding: 16px;
+}
+
+.admin-chart--donut{
+    height: 320px;
+}
+
+.admin-chart-panel--compact .admin-chart{
+    padding-inline: 20px;
+}
+
+.admin-table--orders{
+    min-width: 880px;
+}
+
+.admin-table--logs{
+    min-width: 980px;
+}
+
+.repeater-row--textarea{
+    align-items: start;
+}
+
+.repeater-row--textarea > button{
+    margin-top: 20px;
+}
+
+.admin-dashboard-bottom{
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(310px, .65fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+

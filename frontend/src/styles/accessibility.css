@@ -1,0 +1,7 @@
+/* Global keyboard and motion rules, shared by admin, storefront and installer. */
+:where(a, button, input, textarea, select, summary, [tabindex="0"]):focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+:where(input, textarea, select) { max-width:100%; }
+:where(.admin-shell, .page) { min-width:0; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior:auto !important; animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
+}
