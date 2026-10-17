@@ -5,6 +5,7 @@ import hashlib
 import hmac
 import ipaddress
 import json
+import logging
 import os
 import re
 import secrets
@@ -48,6 +49,8 @@ CSRF_COOKIE = "velmora_install_csrf"
 SESSION_TTL_SECONDS = 60 * 60
 MAX_UNLOCK_ATTEMPTS = 8
 UNLOCK_WINDOW_SECONDS = 15 * 60
+
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Velmora Installer", version=APP_VERSION, docs_url=None, redoc_url=None, openapi_url=None)
 
@@ -189,8 +192,8 @@ def _runtime_check() -> list[dict]:
             probe.write_text("ok", encoding="utf-8")
             probe.unlink()
             checks.append({"key": name, "ok": True, "message": "Writable"})
-        except OSError as exc:
-            checks.append({"key": name, "ok": False, "message": str(exc)})
+        except OSError:
+            checks.append({"key": name, "ok": False, "message": "Storage is not writable"})
     token_ok = bool(_setup_token()) or _installed()
     checks.append({"key": "Setup code", "ok": token_ok, "message": "Ready" if token_ok else "Missing bootstrap setup code"})
     host = _site_host()
@@ -199,16 +202,16 @@ def _runtime_check() -> list[dict]:
         try:
             addresses = sorted({item[4][0] for item in socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM)})
             checks.append({"key": "DNS", "ok": bool(addresses), "message": ", ".join(addresses[:4]) or "No addresses"})
-        except OSError as exc:
-            checks.append({"key": "DNS", "ok": False, "message": f"Domain does not resolve yet: {exc}"})
+        except OSError:
+            checks.append({"key": "DNS", "ok": False, "message": "Domain does not resolve yet"})
     try:
         with _bootstrap_connect() as conn:
             with conn.cursor() as cur:
                 cur.execute("SELECT 1")
                 cur.fetchone()
         checks.append({"key": "Bundled PostgreSQL", "ok": True, "message": "Reachable"})
-    except Exception as exc:
-        checks.append({"key": "Bundled PostgreSQL", "ok": False, "message": str(exc)[:180]})
+    except Exception:
+        checks.append({"key": "Bundled PostgreSQL", "ok": False, "message": "Database is not reachable"})
     return checks
 
 
@@ -525,7 +528,8 @@ def test_database(
     try:
         return _database_probe(payload)
     except Exception as exc:
-        raise HTTPException(status_code=422, detail=f"Database connection failed: {exc}") from exc
+        logger.warning("Database connection test failed (%s)", type(exc).__name__)
+        raise HTTPException(status_code=422, detail="Database connection failed. Verify the connection settings.") from None
 
 
 @app.post("/api/v1/install/run")
@@ -594,7 +598,8 @@ async def run_install(
             raise
         except Exception as exc:
             INSTALL_LOCK_FILE.unlink(missing_ok=True)
-            raise HTTPException(status_code=500, detail=f"Installation failed: {exc}") from exc
+            logger.error("Installation failed (%s)", type(exc).__name__)
+            raise HTTPException(status_code=500, detail="Installation failed. Check the server logs.") from None
 
 
 @app.get("/api/v1/install/ready")

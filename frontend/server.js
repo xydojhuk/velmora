@@ -4,6 +4,7 @@ import path from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
+import { rateLimit } from 'express-rate-limit'
 import axios from 'axios'
 
 const root = path.dirname(fileURLToPath(import.meta.url))
@@ -55,6 +56,24 @@ const runtimeConfig = {
 
 const app = express()
 app.disable('x-powered-by')
+// In Docker, Caddy is the only public-facing hop. Do not trust forwarded IPs
+// for direct/local Node development unless explicitly configured.
+const proxyHops = Number(process.env.SSR_TRUST_PROXY_HOPS || 0)
+if (!Number.isInteger(proxyHops) || proxyHops < 0 || proxyHops > 1) throw new Error('Invalid SSR_TRUST_PROXY_HOPS')
+app.set('trust proxy', proxyHops)
+
+const ssrLimitPerMinute = Number(process.env.SSR_RATE_LIMIT_PER_MINUTE || 240)
+if (!Number.isSafeInteger(ssrLimitPerMinute) || ssrLimitPerMinute < 1 || ssrLimitPerMinute > 5000) {
+  throw new Error('Invalid SSR_RATE_LIMIT_PER_MINUTE')
+}
+const ssrRateLimiter = rateLimit({
+  windowMs: 60_000,
+  limit: ssrLimitPerMinute,
+  standardHeaders: 'draft-8',
+  legacyHeaders: false,
+  skip: req => !['GET', 'HEAD'].includes(req.method),
+  message: 'Too many page requests. Please try again later.'
+})
 
 function buildContentSecurityPolicy(nonce) {
   const usesGoogle = Boolean(runtimeConfig.googleAnalyticsId || runtimeConfig.googleTagManagerId)
@@ -216,7 +235,7 @@ app.get('/llms.txt', async (req, res) => {
   res.type('text/plain').send(lines.join('\n'))
 })
 
-app.use(async (req, res, next) => {
+app.use(ssrRateLimiter, async (req, res, next) => {
   if (!['GET', 'HEAD'].includes(req.method) || req.path.startsWith('/api/') || req.path.startsWith('/media/')) return next()
   const privatePage = req.path === '/login' || req.path.startsWith('/admin') || req.path.startsWith('/checkout')
   if (privatePage) {

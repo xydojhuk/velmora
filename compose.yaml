@@ -128,6 +128,7 @@ services:
       NODE_ENV: production
       HOST: 0.0.0.0
       PORT: "5173"
+      SSR_TRUST_PROXY_HOPS: "1"
       SITE_URL: ${VELMORA_SITE_URL}
       API_SERVER_BASE_URL: http://backend:8000/api/v1
       INSTALLER_SERVER_BASE_URL: http://installer:8080/api/v1/install
