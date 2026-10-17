@@ -1,4 +1,6 @@
 // Runtime SEO smoke checks for a real installed shop (never assumes demo products exist).
+import { hasSchemaType } from './seo-structured-data.mjs'
+
 const base = String(process.env.SITE_URL || 'http://localhost:5173').replace(/\/$/, '')
 
 async function read(path) {
@@ -28,8 +30,8 @@ const productUrl = [...sitemap.text.matchAll(/<loc>([^<]*\/product\/[^<]+)<\/loc
 if (productUrl) {
   const product = await read(new URL(productUrl, base).pathname)
   assert(product.response.ok, `Product page HTTP ${product.response.status}`)
-  assert(product.text.includes('https://schema.org'), 'Product JSON-LD absent')
-  assert(product.text.includes('BreadcrumbList'), 'Product breadcrumbs absent')
+assert(hasSchemaType(product.text, 'Product'), 'Product JSON-LD missing or has invalid schema context')
+  assert(hasSchemaType(product.text, 'BreadcrumbList'), 'Product breadcrumbs JSON-LD missing')
   const slug = new URL(productUrl, base).pathname.split('/').pop()
   const checkout = await read(`/checkout/${encodeURIComponent(slug)}`)
   assert(checkout.response.ok, `Checkout HTTP ${checkout.response.status}`)
