@@ -6,7 +6,7 @@ Notable changes to Velmora are documented here. Version numbers used by the appl
 
 Changes intended for the next release will be listed here.
 
-## 0.1.0-alpha.2.4 — 2026-10-15
+## 0.1.0-alpha.2.4 — 2026-10-17
 
 ### Added
 
@@ -25,6 +25,12 @@ Changes intended for the next release will be listed here.
 - Category editor and nested form layouts across screen sizes.
 - Checkout navigation and product loading during client-side routing.
 - Storefront copy and project information presentation.
+
+### Security
+
+- Added rate limiting for dynamic storefront requests.
+- Hardened installer error responses to avoid exposing internal details.
+- Improved structured-data URL validation in SEO checks.
 
 ### Notes
 
