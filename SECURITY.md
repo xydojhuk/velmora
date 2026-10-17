@@ -1,30 +1,27 @@
 # Security Policy
 
-Security reports help protect Velmora and the people who run it.
-
-## Supported versions
-
-Velmora is in alpha. Security fixes are targeted at the latest available version; older alpha builds may not receive fixes. Check the repository's releases and [`VERSION`](VERSION) for version information.
+Velmora is an open-source project currently in alpha.
+It is not yet intended for production use.
 
 ## Reporting a vulnerability
 
-**Do not disclose exploitable vulnerabilities in public issues or discussions.**
+Found a security issue? Please report it privately
+through GitHub's **Security** tab using
+**Report a vulnerability**.
 
-Use GitHub's private vulnerability reporting feature from the repository's **Security** tab when available:
+Please avoid reporting security vulnerabilities
+through public issues.
 
-https://github.com/xydojhuk/velmora/security/advisories/new
+When reporting, include:
+- A brief description of the issue.
+- Steps to reproduce it.
+- Potential security impact.
 
-Include the affected version, a clear description, reproduction steps using synthetic data, impact and any suggested mitigation. Do not submit passwords, session cookies, tokens, personal data or database dumps.
+Do not include passwords, API keys, or real user data.
 
-## Deployment security
+## Supported Versions
 
-Operators are responsible for securing their infrastructure:
+Security updates are provided for the latest
+development version on `main`.
 
-- Use HTTPS and limit access to administrative endpoints.
-- Keep dependencies, container images and the host updated.
-- Protect local configuration, bootstrap secrets and backup files.
-- Rotate credentials after suspected exposure.
-- Test backup restoration on an isolated installation.
-- Never expose development Compose configurations or local secrets as a production deployment.
-
-See [README.md](README.md) for local setup and testing instructions.
+Older alpha versions are not actively maintained.
