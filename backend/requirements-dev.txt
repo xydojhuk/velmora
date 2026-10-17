@@ -2,5 +2,5 @@
 pytest>=9,<10
 httpx>=0.28.1,<0.29
 
-pytest-asyncio>=1.0,<2
+pytest-asyncio>=1.4.0,<2
 defusedxml>=0.7,<1
